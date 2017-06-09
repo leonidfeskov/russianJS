@@ -6,6 +6,7 @@ const DICT = {
     'class': 'класс',
     'console.log': 'вывестиВЖурнал',
     'const': 'константа',
+    'constructor': 'конструктор',
     'continue': 'продолжить',
     'debugger': 'отладчик',
     'default': 'поУмолчанию',
@@ -46,8 +47,64 @@ const DICT = {
     'var': 'перем',
     'void': 'пустота',
     'while': 'пока',
-    'with': 'с'
-}
+    'with': 'с',
+
+    'event': 'событие',
+
+
+    'Boolean': 'Логический',
+
+    'Function': 'Функция',
+
+    'Array': 'Массив',
+    'length': 'длина',
+    'from': 'для',
+    'isArray': 'этоМассив',
+    'of': 'из',
+    'concat': 'объединить',
+    'every': 'каждый',
+    'filter': 'фильтр',
+    'forEach': 'дляКаждого',
+    'indexOf': 'индекс',
+    'join': 'присоединить',
+    'keys': 'ключи',
+    'map': 'карта',
+    'pop': 'удалитьПоследний',
+    'push': 'добавитьВКонец',
+    'reduce': 'редуцировать',
+    'reverse': 'обратить',
+    'shift': 'УдалитьПервый',
+    'slice': 'кусочек',
+    'some': 'один',
+    'sort': 'сортировать',
+    'splice': 'соедитнить',
+    'toString': 'кСтроке',
+    'unshift': 'добавитьВНачало',
+
+    'String': 'Строка',
+    'repeat': 'повторить',
+    'replace': 'заменить',
+    'search': 'найти',
+    'split': 'разъединить',
+    'substr': 'подстрока',
+    'substring': 'подстрока',
+    'toLowerCase': 'вНижнийРегистр',
+    'toUpperCase': 'вВерхнийРегистр',
+    'trim': 'удалитьПробелы',
+
+    'Object': 'Объект',
+    'assign': 'назначить',
+    'create': 'создать',
+    'hasOwnProperty': 'этоСобственноеЗначение',
+    'value': 'значение',
+    'values': 'значения',
+
+    'Number': 'Число',
+    'isNaN': 'этоЧисло',
+    'toFixed': 'знаковПослеЗапятой',
+    'parseFloat': 'кДробномуЧислу',
+    'parseInt': 'кЦеломуЧислу'
+};
 
 const TRANSLIT = {
     'a': 'а',
@@ -102,7 +159,7 @@ const TRANSLIT = {
     'Y': 'Ай',
     'z': 'з',
     'Z': 'З'
-}
+};
 
 var js = document.getElementById('js');
 var jsCode;
@@ -111,7 +168,7 @@ var russianJS = document.getElementById('js-russian');
 
 function converToRussianJS() {
     console.time();
-    jsCode = js.innerHTML;
+    jsCode = js.value;
     var russianJSCode = jsCode;
 
     for (var word in DICT) {
@@ -124,7 +181,7 @@ function converToRussianJS() {
         russianJSCode = russianJSCode.replace(regExp, TRANSLIT[symbol]);
     }
 
-    russianJS.innerHTML = russianJSCode;
+    russianJS.value = russianJSCode;
     console.timeEnd();
 }
 
