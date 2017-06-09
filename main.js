@@ -111,7 +111,7 @@ var russianJS = document.getElementById('js-russian');
 
 function converToRussianJS() {
     console.time();
-    jsCode = js.value;
+    jsCode = js.innerHTML;
     var russianJSCode = jsCode;
 
     for (var word in DICT) {
@@ -124,11 +124,12 @@ function converToRussianJS() {
         russianJSCode = russianJSCode.replace(regExp, TRANSLIT[symbol]);
     }
 
-    russianJS.value = russianJSCode;
+    russianJS.innerHTML = russianJSCode;
     console.timeEnd();
 }
 
 window.onload = function() {
+
     converToRussianJS();
 
     js.addEventListener('blur', function() {

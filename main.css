@@ -17,9 +17,13 @@ body {
 }
 
 textarea {
+	background: #fff;
 	box-sizing: border-box;
+	border: 1px solid #888888;
 	padding: 5px;
 	width: 100%;
 	height: 500px;
-	resize: vertical;
+	overflow: auto;
+	font: 14px/1.2 Consolas, monospace;
+	white-space: pre;
 }
