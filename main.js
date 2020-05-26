@@ -58,7 +58,7 @@ const DICT = {
 
     'Array': 'Массив',
     'length': 'длина',
-    'from': 'для',
+    'from': 'из',
     'isArray': 'этоМассив',
     'of': 'из',
     'concat': 'объединить',
